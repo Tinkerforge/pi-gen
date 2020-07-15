@@ -1,7 +1,9 @@
-# pi-gen
+# TNG Raspbian Image Generator (fork of pi-gen)
 
-_Tool used to create the raspberrypi.org Raspbian images_
+_Tool used to create the TNG Raspbian image_
 
+The following documentation is currently a 1:1 copy of the original pi-gen
+documentation and will be adapted/updated in the future.
 
 ## Dependencies
 
