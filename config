@@ -1,0 +1,11 @@
+PI_GEN=tng-raspbian
+PI_GEN_REPO=https://github.com/Tinkerforge/tng-raspbian
+IMG_NAME=TNG-Raspbian
+LOCALE_DEFAULT=en_US.UTF-8
+TARGET_HOSTNAME=tng-base-default
+KEYBOARD_KEYMAP=de
+KEYBOARD_LAYOUT=Deutsch
+TIMEZONE_DEFAULT=Europe/Berlin
+FIRST_USER_NAME=tng
+FIRST_USER_PASS=default
+ENABLE_SSH=1
