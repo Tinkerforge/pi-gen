@@ -45,6 +45,14 @@ for GRP in adm dialout cdrom audio users sudo video games plugdev input gpio spi
 done
 EOF
 
+# patch /etc/sudoers.d/010_pi-nopasswd to use $FIRST_USER_NAME instead of
+# hardcoding pi. it would be preferred to generate the file correctly in the
+# first place, but I'm unable to find where this file actually comes from
+on_chroot <<EOF
+sed "s/^pi /$FIRST_USER_NAME /" -i /etc/sudoers.d/010_pi-nopasswd
+mv /etc/sudoers.d/010_pi-nopasswd /etc/sudoers.d/010_$FIRST_USER_NAME-nopasswd
+EOF
+
 on_chroot << EOF
 setupcon --force --save-only -v
 EOF
