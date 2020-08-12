@@ -48,3 +48,32 @@ max_framebuffers=2
 
 [all]
 #dtoverlay=vc4-fkms-v3d
+
+# TNG Base: Force stable SPI clock frequency
+core_freq=250
+
+# TNG Base: Load initramfs for applying device specific config
+initramfs initramfs7.img followkernel
+
+# TNG Base: Enable green status LED
+dtparam=act_led_trigger=heartbeat
+dtoverlay=act-led,gpio=20,activelow=on
+
+# TNG Base: Enable I2C-1 bus for PCF8523 RTC and M24C64 EEPROM
+dtparam=i2c1=on
+dtoverlay=i2c1,pins_44_45=1
+
+# TNG Base: Enable PCF8523 RTC
+dtoverlay=i2c-rtc,pcf8523
+
+# TNG Base: Enable SPI0 for TNG Base Bricklet
+dtparam=spi=on
+
+# TNG Base: Enable SPI2-CS0 interface for SLB9670 TPM
+dtoverlay=spi2-1cs,cs0_spidev=disabled
+
+# TNG Base: Enable SLB9670 TPM
+dtoverlay=anyspi:spi2-0,dev="infineon,slb9670",speed=32000000
+
+# TNG Base: Enable micro SD card interface
+dtoverlay=sdio,poll_once=off
