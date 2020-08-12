@@ -30,3 +30,7 @@ pciutils
 rpi-eeprom
 raspinfo
 chrony
+brickd
+brickv
+python3-tinkerforge
+python-tinkerforge
